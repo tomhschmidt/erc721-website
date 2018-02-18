@@ -138,6 +138,14 @@
               function transfer(address _to, uint256 _tokenId) public;
 
               /**
+              * @dev Transfers the ownership of a given token ID to another address
+              * @param _to address to receive the ownership of the given token ID
+              * @param _from TODO
+              * @param _tokenId uint256 ID of the token to be transferred
+              */
+              function transferFrom(address _from, address _to, uint256 _tokenId) public;
+
+              /**
               * @dev Approves another address to claim for the ownership of any tokens owned by this account
               * @param _to address to be approved for the given token ID
               */
