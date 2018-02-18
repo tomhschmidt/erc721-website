@@ -1,0 +1,946 @@
+/* Bulma Framework */
+@import "../../../node_modules/bulma/bulma";
+
+/* Webfonts */
+@import url("//hello.myfonts.net/count/35cd78");
+@font-face {font-family: 'Rolanti-Ultra';src: url('/assets/webfonts/rolanti/35CD78_0_0.eot');src: url('/assets/webfonts/rolanti/rolanti/35CD78_0_0.eot?#iefix') format('embedded-opentype'),url('/assets/webfonts/rolanti/35CD78_0_0.woff2') format('woff2'),url('/assets/webfonts/rolanti/35CD78_0_0.woff') format('woff'),url('/assets/webfonts/rolanti/35CD78_0_0.ttf') format('truetype');}
+@font-face {font-family: 'Rolanti-SemiBold';src: url('/assets/webfonts/rolanti/35CD78_1_0.eot');src: url('/assets/webfonts/rolanti/35CD78_1_0.eot?#iefix') format('embedded-opentype'),url('/assets/webfonts/rolanti/35CD78_1_0.woff2') format('woff2'),url('/assets/webfonts/rolanti/35CD78_1_0.woff') format('woff'),url('/assets/webfonts/rolanti/35CD78_1_0.ttf') format('truetype');}
+@font-face {font-family: 'Rolanti-Bold';src: url('/assets/webfonts/rolanti/35CD78_2_0.eot');src: url('/assets/webfonts/rolanti/35CD78_2_0.eot?#iefix') format('embedded-opentype'),url('/assets/webfonts/rolanti/35CD78_2_0.woff2') format('woff2'),url('/assets/webfonts/rolanti/35CD78_2_0.woff') format('woff'),url('/assets/webfonts/rolanti/35CD78_2_0.ttf') format('truetype');}
+@font-face {font-family: 'Rolanti';src: url('/assets/webfonts/rolanti/35CD78_3_0.eot');src: url('/assets/webfonts/rolanti/35CD78_3_0.eot?#iefix') format('embedded-opentype'),url('/assets/webfonts/rolanti/35CD78_3_0.woff2') format('woff2'),url('/assets/webfonts/rolanti/35CD78_3_0.woff') format('woff'),url('/assets/webfonts/rolanti/35CD78_3_0.ttf') format('truetype');}
+@font-face {font-family: 'Rolanti-Thin';src: url('/assets/webfonts/rolanti/35CD78_4_0.eot');src: url('/assets/webfonts/rolanti/35CD78_4_0.eot?#iefix') format('embedded-opentype'),url('/assets/webfonts/rolanti/35CD78_4_0.woff2') format('woff2'),url('/assets/webfonts/rolanti/35CD78_4_0.woff') format('woff'),url('/assets/webfonts/rolanti/35CD78_4_0.ttf') format('truetype');}
+
+@import url("//hello.myfonts.net/count/356f97");
+@font-face {font-family: 'DINNextLTPro-Regular';src: url('/assets/webfonts/din/356F97_0_0.eot');src: url('/assets/webfonts/din/356F97_0_0.eot?#iefix') format('embedded-opentype'),url('/assets/webfonts/din/356F97_0_0.woff2') format('woff2'),url('/assets/webfonts/din/356F97_0_0.woff') format('woff'),url('/assets/webfonts/din/356F97_0_0.ttf') format('truetype');}
+@font-face {font-family: 'DINNextLTPro-BoldCondensed';src: url('/assets/webfonts/din/356F97_1_0.eot');src: url('/assets/webfonts/din/356F97_1_0.eot?#iefix') format('embedded-opentype'),url('/assets/webfonts/din/356F97_1_0.woff2') format('woff2'),url('/assets/webfonts/din/356F97_1_0.woff') format('woff'),url('/assets/webfonts/din/356F97_1_0.ttf') format('truetype');}
+
+/* Variables - Fonts */
+$header-font: 'Source Code Pro', monospace;
+$body-font: 'Source Code Pro', monospace;
+
+/* Variables - Colors */
+$body-font-color: #000;
+$dark-gray: #131313;
+$medium-gray: #1d1d1d;
+$light-gray: #e1e1e1;
+$deep-purple: #362e4a;
+$green: #33ff99;
+$white: #ffffff;
+
+/* Variables - Layout */
+$mobile-padding: 40px 0;
+$desktop-padding: 100px 0;
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Text selection color */
+p::selection { background: $green; }
+p::-moz-selection { background: $green; }
+
+html {
+  background-color: $medium-gray;
+}
+
+body {
+  background-color: $dark-gray;
+  font-family: $body-font;
+  font-size: 1.1rem;
+  color: $body-font-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font;
+}
+
+p > span {
+  color: $green;
+}
+
+.section-header-text {
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  max-width: 800px;
+  @include desktop { padding: 0; }
+
+  figure {
+    margin-bottom: 20px;
+  }
+
+  .section-header {
+    margin-bottom: 20px;
+    padding: 5px 15px;
+    font-size: 34px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  .section-subheader {
+    margin-bottom: 20px;
+    padding: 5px 15px;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  .section-text {
+    margin-bottom: 20px;
+  }
+}
+
+.column {
+  margin-bottom: 20px;
+  @include desktop { margin-bottom: 0; }
+}
+
+#intro {
+  margin: 0 auto;
+  background-color: $medium-gray;
+  position: relative;
+}
+
+.hero-head {
+  padding: 5px 0;
+  background-color: $deep-purple;
+
+  p {
+    font-family: "Rolanti", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    color: $green;
+    text-transform: uppercase;
+  }
+}
+
+.hero-body {
+    background-color: $deep-purple;
+}
+
+#intro-img {
+  max-width: 400px;
+  max-height: 400px;
+  margin-bottom: 30px;
+}
+
+#intro-header-text {
+  margin: 0 auto;
+  max-width: 800px;
+  @include desktop {
+    margin: auto;
+    position: absolute;
+    top: 70%; left: 0; bottom: 0; right: 0;
+  }
+
+  #intro-header {
+    margin-top: 20px;
+    color: $white;
+    margin-bottom: 20px;
+    font-size: 32px;
+  }
+
+  #intro-sub {
+    font-family: $header-font;
+    color: $white;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+}
+
+.hero-foot {
+  padding-bottom: 20px;
+  background-color: $deep-purple;
+  @include desktop {
+    margin: auto;
+    position: absolute;
+    top: 90%; left: 0; bottom: 0; right: 0;
+  }
+}
+
+.mouse-icon {
+  margin: 0 auto;
+  border: 2px solid white;
+  border-radius: 16px;
+  height: 40px;
+  width: 24px;
+  display: none;
+  @include desktop { display: block; }
+
+  .wheel {
+    position: relative;
+    border-radius: 10px;
+    background: $green;
+    width: 2px;
+    height: 6px;
+    top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+
+    -webkit-animation-name: drop;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+    -webkit-animation-name: drop;
+            animation-name: drop;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
+    }
+}
+
+@-webkit-keyframes drop {
+  0% { top: 5px; opacity: 0; }
+  30% { top: 10px; opacity: 1; }
+  100% { top: 25px; opacity: 0; }
+}
+
+@keyframes drop {
+  0% { top: 5px; opacity: 0; }
+  30% { top: 10px; opacity: 1; }
+  100% { top: 25px; opacity: 0; }
+}
+
+/* -- Layout: PART OF THE ETHER -- */
+
+#what-is-erc-721 {
+  padding: $mobile-padding;
+  background-color: $white;
+  @include desktop {
+    padding: $desktop-padding;
+  }
+}
+
+/* --------------------------- */
+
+#denom-scale {
+  padding: $mobile-padding;
+  background-color: $medium-gray;
+  @include desktop {
+    padding: $desktop-padding;
+  }
+}
+
+#denom-scale-container {
+  padding: 0 1.5rem;
+  max-width: 800px;
+  overflow: hidden;
+  @include desktop {
+    padding: 0;
+  }
+}
+
+.denom-scale-badge {
+  margin: 0 auto;
+  width: 157px;
+  height: 150px;
+  position: relative;
+  @include desktop {
+    margin: 140px 0 0 0;
+    float: left;
+    position: absolute;
+  }
+
+  .denom-badge-value {
+    font-family: $header-font;
+    color: $green;
+    font-size: 57px; letter-spacing: 2.7px;
+    width: 104px;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 10px; left: 20px; bottom: 0; right: 0;
+
+    sup {
+      vertical-align: super;
+      font-size: 14px;
+    }
+  }
+
+  .denom-badge-badge {
+    width: 35px; height: 33px;
+    position: absolute;
+    bottom: 0;
+    background:linear-gradient(135deg,transparent 49%,$green 50%,transparent 51%);
+  }
+
+  .denom-badge-denom {
+    font-family: $header-font;
+    color: $green;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    padding-left: 30px;
+    position: absolute;
+    bottom: 0;
+    text-transform: uppercase;
+  }
+}
+
+.equal-scale {
+  display: none;
+  @include desktop {
+    width: 35px;
+    padding-bottom: 10px;
+    border-bottom: 10px solid $green;
+    margin: 200px 0 0 200px;
+    float: left;
+    display: block;
+
+    &:after {
+      content: "";
+      display: block;
+      border-bottom: 10px solid $green;
+    }
+  }
+}
+
+.denom-scale-context {
+  font-family: $header-font;
+  color: $green;
+  font-size: 18px; line-height: 1.82;
+  margin: 20px 0 0 0;
+  text-align: center;
+  @include desktop {
+    font-size: 22px;
+    margin: 15px 0 0 40px;
+    text-align: left;
+    float: left;
+  }
+
+  p { transition: all 0.2s ease-in-out; }
+
+  p:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+#atto-scale {
+  opacity: 1;
+}
+
+/* -- Layout: MILLI FOR THE PIGGY BANK. ETHER FOR THE BILLS. -- */
+
+#milli-piggy-ether-bills {
+  background-color: $dark-gray;
+  padding: $mobile-padding;
+  @include desktop {
+    padding: $desktop-padding;
+  }
+
+  #milli-piggy-ether-bills-columns {
+    padding: 0 1.5rem;
+    margin-top: 40px;
+    flex-flow: wrap;
+    @include desktop {
+      padding: 0;
+    }
+
+    h3 {
+      color: $green;
+      margin: 0;
+      font-size: 22px;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 15px 0 0 0;
+    }
+  }
+}
+
+#erc-20 {
+  background-color: $white;
+  padding: $mobile-padding;
+  @include desktop {
+    padding: $desktop-padding;
+  }
+
+  #erc-20-columns {
+    padding: 0 1.5rem;
+    margin-top: 40px;
+    flex-flow: wrap;
+    @include desktop {
+      padding: 0;
+    }
+
+    h3 {
+      color: $green;
+      margin: 0;
+      font-size: 22px;
+      text-transform: uppercase;
+    }
+
+    h4 {
+      margin: 0;
+    }
+
+    p {
+      margin: 15px 0 0 0;
+    }
+  }
+}
+
+#interface-spec {
+  background-color: $white;
+  padding: $mobile-padding;
+  @include desktop {
+    padding: $desktop-padding;
+  }
+
+  #erc-20-columns {
+    padding: 0 1.5rem;
+    margin-top: 40px;
+    flex-flow: wrap;
+    @include desktop {
+      padding: 0;
+    }
+
+    h3 {
+      color: $green;
+      margin: 0;
+      font-size: 22px;
+      text-transform: uppercase;
+    }
+
+    h4 {
+      margin: 0;
+    }
+
+    p {
+      margin: 15px 0 0 0;
+    }
+  }
+}
+
+
+/* -- Layout: FIFTY FINNEY -- */
+
+#supporters {
+  background-color: $white;
+  padding: $mobile-padding;
+  @include desktop {
+    padding: $desktop-padding;
+  }
+
+  #supporters-columns {
+    padding: 0 1.5rem;
+    margin-top: 40px;
+    flex-flow: wrap;
+    @include desktop {
+      padding: 0;
+    }
+
+    h3 {
+      color: $green;
+      margin: 0;
+      font-size: 22px;
+      text-transform: uppercase;
+    }
+
+    h4 {
+      margin: 0;
+    }
+
+    p {
+      margin: 15px 0 0 0;
+    }
+  }
+}
+
+/* -- Layout: NO GWEI? -- */
+
+#no-gwei {
+  padding: $mobile-padding;
+  background-color: $dark-gray;
+  @include desktop {
+    padding: $desktop-padding;
+  }
+}
+
+#eth-conversion-info {
+  padding: 0 1.5rem;
+  margin-top: 80px;
+  max-width: 800px;
+  overflow: hidden;
+  @include desktop {
+    padding: 0;
+  }
+}
+
+/* -- Layout: GET STARTED -- */
+
+#get-started {
+  padding: $mobile-padding;
+  background-color: $deep-purple;
+  @include desktop {
+    padding: $desktop-padding;
+  }
+
+  .get-started-header {
+    color: white;
+  }
+
+  #get-started-columns {
+    color: white;
+    border: 1px;
+    border-color: white;
+  }
+
+  .get-started-links {
+    color: $white;
+    border: 2px solid white;
+  }
+}
+
+/* -- Layout: GWEI.IO FOOTER -- */
+
+#previous-projects {
+  background-color: $light-gray;
+}
+
+/* -- Global Styles: Badge + Denomination --*/
+/* -- used in 'NO GWEI?' section --*/
+
+.denom-badge {
+  margin: auto;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 157px;
+  height: 150px;
+  position: relative;
+  @include desktop {
+    float: left;
+  }
+
+  .denom-badge-value {
+    font-family: $header-font;
+    color: $green;
+    font-size: 57px; letter-spacing: 2.7px;
+    width: 104px;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 10px; left: 20px; bottom: 0; right: 0;
+
+    sup {
+      vertical-align: super;
+      font-size: 14px;
+    }
+  }
+
+  .denom-badge-badge {
+    width: 35px; height: 33px;
+    position: absolute;
+    bottom: 0;
+    background:linear-gradient(135deg,transparent 49%,$green 50%,transparent 51%);
+  }
+
+  .denom-badge-denom {
+    font-family: $header-font;
+    color: $green;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    padding-left: 30px;
+    position: absolute;
+    bottom: 0;
+    text-transform: uppercase;
+  }
+}
+
+.equal {
+  display: none;
+  @include desktop {
+    width: 35px;
+    padding-bottom: 10px;
+    margin: 60px 0 0 40px;
+    float: left;
+    display: block;
+
+    &:after {
+      content: "";
+      display: block;
+      border-bottom: 10px solid $green;
+    }
+  }
+}
+
+.denom-context {
+  font-family: $header-font;
+  color: $green;
+  font-size: 18px; line-height: 1.82;
+  margin: 20px 0 0 0;
+  text-align: center;
+  @include desktop {
+    font-size: 22px;
+    margin: 15px 0 0 40px;
+    text-align: left;
+    float: left;
+  }
+
+  .denom-link {
+    margin-top: 60px;
+
+    a {
+      color: #fff;
+      transition: all 0.2s ease-in-out;
+      position: relative;
+
+      &:hover {
+        color: $green;
+      }
+    }
+
+    a:after {
+      content: "\2192";
+      font-family: $header-font;
+      color: $green;
+      font-size: 22px;
+      margin: 0 0 0 20px;
+      transition: all 0.2s ease-in-out;
+      position: absolute;
+    }
+
+    a:hover:after {
+      margin: 0 0 0 25px;
+    }
+  }
+}
+
+/* -- Global Styles: Glitch Effect -- */
+
+.gg {
+	--glitch-width: 200px;
+	--glitch-height: 200px;
+}
+
+.glitch-attoether,
+.glitch-nanoether,
+.glitch-milliether,
+.glitch-ether,
+.glitch-wei,
+.glitch-shannon,
+.glitch-finney,
+.glitch-vitalik {
+	--gap-horizontal: 5px;
+	--gap-vertical: 10px;
+	--time-anim: 2s;
+	--blend-mode-1: none;
+	--blend-mode-2: none;
+	--blend-mode-3: luminosity;
+	--blend-mode-4: none;
+	--blend-mode-5: none;
+	--blend-color-1: transparent;
+	--blend-color-2: transparent;
+	--blend-color-3: #4d8c60;
+	--blend-color-4: transparent;
+	--blend-color-5: #c9b09a;
+}
+
+/* Glitch styles */
+.glitch {
+	position: relative;
+	width: var(--glitch-width);
+	max-width: 200px;;
+	height: var(--glitch-height);
+	max-height: 200px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.glitch__img {
+	position: absolute;
+	top: calc(0 * var(--gap-vertical));
+	left: calc(-1 * var(--gap-horizontal));
+	width: calc(100% + var(--gap-horizontal) * 2);
+	height: calc(100% + var(--gap-vertical) * 2);
+	background: url("../../assets/img/vitalik.png") no-repeat 50% 0;
+	background-color: var(--blend-color-1);
+	background-size: contain;
+	transform: translate3d(0,0,0);
+	background-blend-mode: var(--blend-mode-1);
+}
+
+.nft__img {
+	position: absolute;
+  width: 250px;
+  height: 250px;
+}
+
+.glitch-attoether .glitch__img { background-image: url("../../assets/img/attoether.png"); }
+.glitch-nanoether .glitch__img { background-image: url("../../assets/img/nanoether.png"); }
+.glitch-milliether .glitch__img { background-image: url("../../assets/img/milliether.png"); }
+.glitch-ether .glitch__img { background-image: url("../../assets/img/ether.png"); }
+.fungible .nft__img { background-image: url("../../assets/img/fungible.png"); }
+.glitch-shannon .glitch__img { background-image: url("../../assets/img/shannon.png"); }
+.glitch-finney .glitch__img { background-image: url("../../assets/img/finney.png"); }
+.glitch-vitalk .glitch__img { background-image: url("../../assets/img/vitalik.png"); }
+
+.suporter {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+}
+
+/* Set the background colors for the glitch images*/
+.glitch__img:nth-child(2) {
+	background-color: var(--blend-color-2);
+	background-blend-mode: var(--blend-mode-2);
+}
+
+.glitch__img:nth-child(3) {
+	background-color: var(--blend-color-3);
+	background-blend-mode: var(--blend-mode-3);
+}
+
+.glitch__img:nth-child(4) {
+	background-color: var(--blend-color-4);
+	background-blend-mode: var(--blend-mode-4);
+}
+
+.glitch__img:nth-child(5) {
+	background-color: var(--blend-color-5);
+	background-blend-mode: var(--blend-mode-5);
+}
+
+/* Hide all images except the first one */
+.glitch__img:nth-child(n+2) {
+	opacity: 0;
+}
+
+/* Hovers */
+
+/* On hover we show the 2nd, 3rd, 4th and 5th image*/
+.glitch:hover .glitch__img:nth-child(n+2) {
+	opacity: 1;
+}
+
+/* Hover animations for horizontal case */
+.glitch:hover .glitch__img:nth-child(2) {
+	transform: translate3d(var(--gap-horizontal),0,0);
+	animation: glitch-anim-1-horizontal var(--time-anim) infinite linear alternate;
+}
+
+.glitch:hover > .glitch__img:nth-child(3) {
+	transform: translate3d(calc(-1 * var(--gap-horizontal)),0,0);
+	animation: glitch-anim-2-horizontal var(--time-anim) infinite linear alternate;
+}
+
+.glitch:hover > .glitch__img:nth-child(4) {
+	transform: translate3d(0, calc(-1 * var(--gap-vertical)), 0) scale3d(-1,-1,1);
+	animation: glitch-anim-3-horizontal var(--time-anim) infinite linear alternate;
+}
+
+/* Hover animations for vertical case */
+.glitch--vertical:hover .glitch__img:nth-child(2) {
+	transform: translate3d(0, var(--gap-vertical), 0);
+	animation: glitch-anim-1-vertical var(--time-anim) infinite linear alternate;
+}
+
+.glitch--vertical:hover > .glitch__img:nth-child(3) {
+	transform: translate3d(0, calc(-1 * var(--gap-vertical)), 0);
+	animation: glitch-anim-2-vertical var(--time-anim) infinite linear alternate;
+}
+
+.glitch--vertical:hover > .glitch__img:nth-child(4) {
+	transform: translate3d(calc(-1 * var(--gap-horizontal)), 0, 0) scale3d(-1,-1,1);
+	animation: glitch-anim-3-vertical var(--time-anim) infinite linear alternate;
+}
+
+/* Hover flash animation on last image */
+.glitch:hover > .glitch__img:nth-child(5) {
+	animation: glitch-anim-flash 0.5s steps(1,end) infinite;
+}
+
+/* Animations */
+@keyframes glitch-anim-1-horizontal {
+	0% {
+		-webkit-clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+		clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+	}
+	10% {
+		-webkit-clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+		clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+	}
+	20% {
+		-webkit-clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+		clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+	}
+	30% {
+		-webkit-clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+		clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+	}
+	40% {
+		-webkit-clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+		clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+	}
+	50% {
+		-webkit-clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+		clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+	}
+	60% {
+		-webkit-clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+		clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+	}
+	70% {
+		-webkit-clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+		clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+	}
+	80% {
+		-webkit-clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+		clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+	}
+	90% {
+		-webkit-clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+		clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+	}
+	100% {
+		-webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+		clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+	}
+}
+@keyframes glitch-anim-2-horizontal {
+	0% {
+		-webkit-clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+		clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+	}
+	15% {
+		-webkit-clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+		clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+	}
+	22% {
+		-webkit-clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
+		clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
+	}
+	31% {
+		-webkit-clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+		clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+	}
+	45% {
+		-webkit-clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
+		clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
+	}
+	51% {
+		-webkit-clip-path: polygon(0 52%, 100% 52%, 100% 59%, 0 59%);
+		clip-path: polygon(0 52%, 100% 52%, 100% 59%, 0 59%);
+	}
+	63% {
+		-webkit-clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+		clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+	}
+	76% {
+		-webkit-clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%);
+		clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%);
+	}
+	81% {
+		-webkit-clip-path: polygon(0 65%, 100% 65%, 100% 40%, 0 40%);
+		clip-path: polygon(0 65%, 100% 65%, 100% 40%, 0 40%);
+	}
+	94% {
+		-webkit-clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%);
+		clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%);
+	}
+	100% {
+		-webkit-clip-path: polygon(0 14%, 100% 14%, 100% 33%, 0 33%);
+		clip-path: polygon(0 14%, 100% 14%, 100% 33%, 0 33%);
+	}
+}
+@keyframes glitch-anim-3-horizontal {
+	0% {
+		-webkit-clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%);
+		clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%);
+	}
+	5% {
+		-webkit-clip-path: polygon(0 10%, 100% 10%, 100% 9%, 0 9%);
+		clip-path: polygon(0 10%, 100% 10%, 100% 9%, 0 9%);
+	}
+	10% {
+		-webkit-clip-path: polygon(0 5%, 100% 5%, 100% 6%, 0 6%);
+		clip-path: polygon(0 5%, 100% 5%, 100% 6%, 0 6%);
+	}
+	25% {
+		-webkit-clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+		clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+	}
+	27% {
+		-webkit-clip-path: polygon(0 10%, 100% 10%, 100% 10%, 0 10%);
+		clip-path: polygon(0 10%, 100% 10%, 100% 10%, 0 10%);
+	}
+	30% {
+		-webkit-clip-path: polygon(0 30%, 100% 30%, 100% 25%, 0 25%);
+		clip-path: polygon(0 30%, 100% 30%, 100% 25%, 0 25%);
+	}
+	33% {
+		-webkit-clip-path: polygon(0 15%, 100% 15%, 100% 16%, 0 16%);
+		clip-path: polygon(0 15%, 100% 15%, 100% 16%, 0 16%);
+	}
+	37% {
+		-webkit-clip-path: polygon(0 40%, 100% 40%, 100% 39%, 0 39%);
+		clip-path: polygon(0 40%, 100% 40%, 100% 39%, 0 39%);
+	}
+	40% {
+		-webkit-clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
+		clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
+	}
+	45% {
+		-webkit-clip-path: polygon(0 60%, 100% 60%, 100% 55%, 0 55%);
+		clip-path: polygon(0 60%, 100% 60%, 100% 55%, 0 55%);
+	}
+	50% {
+		-webkit-clip-path: polygon(0 30%, 100% 30%, 100% 31%, 0 31%);
+		clip-path: polygon(0 30%, 100% 30%, 100% 31%, 0 31%);
+	}
+	53% {
+		-webkit-clip-path: polygon(0 70%, 100% 70%, 100% 69%, 0 69%);
+		clip-path: polygon(0 70%, 100% 70%, 100% 69%, 0 69%);
+	}
+	57% {
+		-webkit-clip-path: polygon(0 40%, 100% 40%, 100% 41%, 0 41%);
+		clip-path: polygon(0 40%, 100% 40%, 100% 41%, 0 41%);
+	}
+	60% {
+		-webkit-clip-path: polygon(0 80%, 100% 80%, 100% 75%, 0 75%);
+		clip-path: polygon(0 80%, 100% 80%, 100% 75%, 0 75%);
+	}
+	65% {
+		-webkit-clip-path: polygon(0 50%, 100% 50%, 100% 51%, 0 51%);
+		clip-path: polygon(0 50%, 100% 50%, 100% 51%, 0 51%);
+	}
+	70% {
+		-webkit-clip-path: polygon(0 90%, 100% 90%, 100% 90%, 0 90%);
+		clip-path: polygon(0 90%, 100% 90%, 100% 90%, 0 90%);
+	}
+	73% {
+		-webkit-clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+		clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+	}
+	80% {
+		-webkit-clip-path: polygon(0 100%, 100% 100%, 100% 99%, 0 99%);
+		clip-path: polygon(0 100%, 100% 100%, 100% 99%, 0 99%);
+	}
+	100% {
+		-webkit-clip-path: polygon(0 70%, 100% 70%, 100% 71%, 0 71%);
+		clip-path: polygon(0 70%, 100% 70%, 100% 71%, 0 71%);
+	}
+}
+/* Flash */
+@keyframes glitch-anim-flash {
+	0% {
+		opacity: 0;
+		transform: translate3d(var(--gap-horizontal), var(--gap-vertical), 0);
+	}
+	33%, 100% {
+		opacity: 0;
+		transform: translate3d(0,0,0);
+	}
+}

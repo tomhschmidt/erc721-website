@@ -1,0 +1,54 @@
+.section-a {
+  background-color: #362e4a;
+}
+
+.row {
+  width: 100%;
+}
+
+h1 {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 33px;
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 12.5px;
+  text-align: center;
+  color: #ffffff;
+}
+
+h3 {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 14px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 11.5px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 14px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 4px;
+  text-align: center;
+  color: #000000;
+}
+
+p {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 1.1px;
+  text-align: center;
+  color: #000000;
+}
