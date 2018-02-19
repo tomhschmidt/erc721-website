@@ -1,7 +1,7 @@
 {
-  "name": "gwei",
+  "name": "erc-721",
   "version": "1.0.0",
-  "description": "gwei.io",
+  "description": "erc721.org",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
