@@ -1,7 +1,5 @@
 /* Bulma Framework */
 /*! bulma.io v0.6.2 | MIT License | github.com/jgthms/bulma */
-@import url("//hello.myfonts.net/count/35cd78");
-@import url("//hello.myfonts.net/count/356f97");
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200,400,900");
 @keyframes spinAround {
   from {
@@ -9681,48 +9679,6 @@ label.panel-block:hover {
 }
 
 /* Webfonts */
-@font-face {
-  font-family: 'Rolanti-Ultra';
-  src: url("/assets/webfonts/rolanti/35CD78_0_0.eot");
-  src: url("/assets/webfonts/rolanti/rolanti/35CD78_0_0.eot?#iefix") format("embedded-opentype"), url("/assets/webfonts/rolanti/35CD78_0_0.woff2") format("woff2"), url("/assets/webfonts/rolanti/35CD78_0_0.woff") format("woff"), url("/assets/webfonts/rolanti/35CD78_0_0.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Rolanti-SemiBold';
-  src: url("/assets/webfonts/rolanti/35CD78_1_0.eot");
-  src: url("/assets/webfonts/rolanti/35CD78_1_0.eot?#iefix") format("embedded-opentype"), url("/assets/webfonts/rolanti/35CD78_1_0.woff2") format("woff2"), url("/assets/webfonts/rolanti/35CD78_1_0.woff") format("woff"), url("/assets/webfonts/rolanti/35CD78_1_0.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Rolanti-Bold';
-  src: url("/assets/webfonts/rolanti/35CD78_2_0.eot");
-  src: url("/assets/webfonts/rolanti/35CD78_2_0.eot?#iefix") format("embedded-opentype"), url("/assets/webfonts/rolanti/35CD78_2_0.woff2") format("woff2"), url("/assets/webfonts/rolanti/35CD78_2_0.woff") format("woff"), url("/assets/webfonts/rolanti/35CD78_2_0.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Rolanti';
-  src: url("/assets/webfonts/rolanti/35CD78_3_0.eot");
-  src: url("/assets/webfonts/rolanti/35CD78_3_0.eot?#iefix") format("embedded-opentype"), url("/assets/webfonts/rolanti/35CD78_3_0.woff2") format("woff2"), url("/assets/webfonts/rolanti/35CD78_3_0.woff") format("woff"), url("/assets/webfonts/rolanti/35CD78_3_0.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Rolanti-Thin';
-  src: url("/assets/webfonts/rolanti/35CD78_4_0.eot");
-  src: url("/assets/webfonts/rolanti/35CD78_4_0.eot?#iefix") format("embedded-opentype"), url("/assets/webfonts/rolanti/35CD78_4_0.woff2") format("woff2"), url("/assets/webfonts/rolanti/35CD78_4_0.woff") format("woff"), url("/assets/webfonts/rolanti/35CD78_4_0.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'DINNextLTPro-Regular';
-  src: url("/assets/webfonts/din/356F97_0_0.eot");
-  src: url("/assets/webfonts/din/356F97_0_0.eot?#iefix") format("embedded-opentype"), url("/assets/webfonts/din/356F97_0_0.woff2") format("woff2"), url("/assets/webfonts/din/356F97_0_0.woff") format("woff"), url("/assets/webfonts/din/356F97_0_0.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'DINNextLTPro-BoldCondensed';
-  src: url("/assets/webfonts/din/356F97_1_0.eot");
-  src: url("/assets/webfonts/din/356F97_1_0.eot?#iefix") format("embedded-opentype"), url("/assets/webfonts/din/356F97_1_0.woff2") format("woff2"), url("/assets/webfonts/din/356F97_1_0.woff") format("woff"), url("/assets/webfonts/din/356F97_1_0.ttf") format("truetype");
-}
-
 /* Variables - Fonts */
 /* Variables - Colors */
 /* Variables - Layout */
@@ -9754,10 +9710,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Source Code Pro", monospace;
-}
-
-p > span {
-  color: #33ff99;
 }
 
 .section-header-text {
@@ -9816,13 +9768,6 @@ p > span {
 .hero-head {
   padding: 5px 0;
   background-color: #362e4a;
-}
-
-.hero-head p {
-  font-family: "Rolanti", Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  color: #33ff99;
-  text-transform: uppercase;
 }
 
 .hero-body {
@@ -9887,81 +9832,7 @@ p > span {
   }
 }
 
-.mouse-icon {
-  margin: 0 auto;
-  border: 2px solid white;
-  border-radius: 16px;
-  height: 40px;
-  width: 24px;
-  display: none;
-}
-
-@media screen and (min-width: 1024px) {
-  .mouse-icon {
-    display: block;
-  }
-}
-
-.mouse-icon .wheel {
-  position: relative;
-  border-radius: 10px;
-  background: #33ff99;
-  width: 2px;
-  height: 6px;
-  top: 4px;
-  margin-left: auto;
-  margin-right: auto;
-  -webkit-animation-name: drop;
-  -webkit-animation-duration: 1.5s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-play-state: running;
-  -webkit-animation-name: drop;
-  animation-name: drop;
-  -webkit-animation-duration: 1.5s;
-  animation-duration: 1.5s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-play-state: running;
-  animation-play-state: running;
-}
-
-@-webkit-keyframes drop {
-  0% {
-    top: 5px;
-    opacity: 0;
-  }
-  30% {
-    top: 10px;
-    opacity: 1;
-  }
-  100% {
-    top: 25px;
-    opacity: 0;
-  }
-}
-
-@keyframes drop {
-  0% {
-    top: 5px;
-    opacity: 0;
-  }
-  30% {
-    top: 10px;
-    opacity: 1;
-  }
-  100% {
-    top: 25px;
-    opacity: 0;
-  }
-}
-
-/* -- Layout: PART OF THE ETHER -- */
+/* -- Layout: WHAT IS ERC-721 -- */
 #what-is-erc-721 {
   padding: 40px 0;
   background-color: #ffffff;
@@ -10103,41 +9974,7 @@ p > span {
   opacity: 1;
 }
 
-/* -- Layout: MILLI FOR THE PIGGY BANK. ETHER FOR THE BILLS. -- */
-#milli-piggy-ether-bills {
-  background-color: #131313;
-  padding: 40px 0;
-}
-
-@media screen and (min-width: 1024px) {
-  #milli-piggy-ether-bills {
-    padding: 100px 0;
-  }
-}
-
-#milli-piggy-ether-bills #milli-piggy-ether-bills-columns {
-  padding: 0 1.5rem;
-  margin-top: 40px;
-  flex-flow: wrap;
-}
-
-@media screen and (min-width: 1024px) {
-  #milli-piggy-ether-bills #milli-piggy-ether-bills-columns {
-    padding: 0;
-  }
-}
-
-#milli-piggy-ether-bills #milli-piggy-ether-bills-columns h3 {
-  color: #33ff99;
-  margin: 0;
-  font-size: 22px;
-  text-transform: uppercase;
-}
-
-#milli-piggy-ether-bills #milli-piggy-ether-bills-columns p {
-  margin: 15px 0 0 0;
-}
-
+/* -- Layout: ERC-20 VS ERC-721 -- */
 #erc-20 {
   background-color: #ffffff;
   padding: 40px 0;
@@ -10176,6 +10013,8 @@ p > span {
   margin: 15px 0 0 0;
 }
 
+/* --------------------------- */
+/* -- Layout: THE SPEC -- */
 #interface-spec {
   background-color: #ffffff;
   padding: 40px 0;
@@ -10214,7 +10053,8 @@ p > span {
   margin: 15px 0 0 0;
 }
 
-/* -- Layout: FIFTY FINNEY -- */
+/* --------------------------- */
+/* -- Layout: ERC-721 SUPPORTERS -- */
 #supporters {
   background-color: #ffffff;
   padding: 40px 0;
@@ -10263,31 +10103,7 @@ p > span {
   margin: 15px 0 0 0;
 }
 
-/* -- Layout: NO GWEI? -- */
-#no-gwei {
-  padding: 40px 0;
-  background-color: #131313;
-}
-
-@media screen and (min-width: 1024px) {
-  #no-gwei {
-    padding: 100px 0;
-  }
-}
-
-#eth-conversion-info {
-  padding: 0 1.5rem;
-  margin-top: 80px;
-  max-width: 800px;
-  overflow: hidden;
-}
-
-@media screen and (min-width: 1024px) {
-  #eth-conversion-info {
-    padding: 0;
-  }
-}
-
+/* --------------------------- */
 /* -- Layout: GET STARTED -- */
 #get-started {
   padding: 40px 0;
@@ -10318,26 +10134,45 @@ p > span {
 }
 
 #get-started .get-started-links {
+  padding-top: 30px;
+  font-size: 22px;
   height: 100px;
   color: #ffffff;
   border: 2px solid white;
 }
 
-/* -- Layout: GWEI.IO FOOTER -- */
+/* --------------------------- */
+/* -- Layout: PREVIOUS PROJECTS -- */
 #previous-projects {
   background-color: #e1e1e1;
 }
 
 #previous-projects .project {
+  max-width: 200px;
+  max-height: 200px;
+  width: 100px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* --------------------------- */
+/* -- Layout: FOOTER -- */
 #rdr-footer {
   background: #1d1d1d;
 }
 
+#rdr-footer h4 {
+  font-size: 14px;
+  color: white;
+}
+
+#rdr-footer #rdr-0x-footer-img {
+  max-width: 200px;
+}
+
+/* --------------------------- */
 /* -- Global Styles: Badge + Denomination --*/
 /* -- used in 'NO GWEI?' section --*/
 .denom-badge {
