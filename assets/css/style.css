@@ -10133,8 +10133,22 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
 }
 
+@media screen and (max-width: 768px) {
+  #get-started .container {
+    padding-bottom: 200px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #get-started .container {
+    padding-bottom: 100px;
+  }
+}
+
 #get-started .get-started-links {
   padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-size: 22px;
   height: 100px;
   color: #ffffff;

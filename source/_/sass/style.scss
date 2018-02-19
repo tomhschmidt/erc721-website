@@ -407,8 +407,19 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
+  .container {
+    @include mobile {
+      padding-bottom: 200px;
+    }
+    @include desktop {
+      padding-bottom: 100px;
+    }
+  }
+
   .get-started-links {
     padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 22px;
     height: 100px;
     color: $white;
