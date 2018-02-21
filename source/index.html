@@ -27,7 +27,7 @@
         </figure>
         <div id="intro-header-text">
           <h1 id="intro-header">ERC-721</h1>
-          <h3 id="intro-sub">Canonical Resource</h3>
+          <h3 id="intro-sub">Proposal</h3>
         </div>
       </div>
     </div>
@@ -111,6 +111,8 @@
             contract ERC721 {
               event Transfer(address indexed _from, address indexed _to, uint256 _tokenId);
               event Approval(address indexed _owner, address indexed _approved, uint256 _tokenId);
+              event AuthorizedOperator(address indexed _owner, address indexed _operator);
+              event RevokedOperator(address indexed _owner, address indexed _operator);
 
               /**
               * @dev Gets the balance of the specified address
@@ -142,10 +144,24 @@
               function transferFrom(address _from, address _to, uint256 _tokenId) public;
 
               /**
-              * @dev Approves another address to claim for the ownership of any tokens owned by this account
-              * @param _to address to be approved for the given token ID
+              * @dev Check whether the operator address is allowed to manage the tokens held by the tokenHolder address.
+              * @param _operator address to check if it has the right to manage the tokens
+              * @param _owner address of a token holder
+              * @return true if the operator has management over the token holders tokens
               */
-              function approveAll(address _to) public;
+              function isOperatorFor(address _operator, address _owner) public constant returns (bool);
+
+              /**
+              * @dev Authorize a third party operator to manage (send) msg.sender's tokens
+              * @param _operator address to add to the set of authorized operators.
+              */
+              function authorizeOperator(address _operator) public;
+
+              /**
+              * @dev Revoke the ability for operator to manage msg.sender's tokens
+              * @param _operator address to remove from the set of authorized operators.
+              */
+              function revokeOperator(address _operator) public;
 
               /**
               * @dev Returns `true` if the contract implements `interfaceID` and`interfaceID` is not 0xffffffff, `false` otherwise
@@ -159,7 +175,7 @@
 
       <br/>
       <div class="section-header-text">
-        <p class="section-text">ERC-721 started as a EIP draft written by <a href="https://github.com/dete">dete</a> and first came to life in the CryptoKitties project by <a href="https://wwww.axiomzen.com">Axiom Zen</a> <br/><br/> ERC-721 has since moved out of beta and into a finalized v1 spec, supported and endorsed by a large number of projects from across the crypto ecosystem.
+        <p class="section-text">ERC-721 started as a EIP draft written by <a href="https://github.com/dete">dete</a> and first came to life in the CryptoKitties project by <a href="https://wwww.axiomzen.com">Axiom Zen</a> <br/><br/> ERC-721 has since moved out of beta and into a more community formalized v1 spec, supported and endorsed by a large number of projects from across the crypto ecosystem.
 </p>
       </div><!-- /.section-header-text -->
     </div><!-- /.container -->
@@ -183,7 +199,7 @@
         <div class="column">
           <a href="http://www.opensea.io">
             <div class=" glitch supporter">
-              <img src="../../assets/img/open-sea.png"/>
+              <img src="../../assets/img/open-sea.png" width="140"/>
             </div>
           </a>
           <h4>OpenSea</h4>
@@ -199,7 +215,7 @@
         <div class="column">
           <a href="https://rarebits.io/">
           <div class=" glitch supporter">
-            <img src="../../assets/img/rarebits.png"/>
+            <img src="../../assets/img/rarebits.png" width="140"/>
           </div>
           </a>
           <h4>RareBits</h4>
@@ -211,14 +227,6 @@
           </div>
           </a>
           <h4>Toshi</h4>
-        </div>
-        <div class="column">
-          <a href="https://decentraland.org/">
-          <div class=" glitch supporter">
-            <img src="../../assets/img/decentraland.png"/>
-          </div>
-        </a>
-          <h4>Decentraland</h4>
         </div>
         <div class="column">
           <a href="http://www.ideocolab.com/">
@@ -235,6 +243,14 @@
           </div>
         </a>
           <h4>Axiom Zen</h4>
+        </div>
+        <div class="column">
+          <a href="https://trustwalletapp.com/">
+          <div class=" glitch supporter">
+            <img src="../../assets/img/trust-logo.png" width="100"/>
+          </div>
+          </a>
+          <h4>Trust Wallet</h4>
         </div>
       </div><!-- /.columns -->
 
