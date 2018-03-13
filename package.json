@@ -11,6 +11,8 @@
   "dependencies": {
     "bulma": "^0.6.2",
     "gulp": "^3.9.1",
+    "highlightjs": "^9.10.0",
+    "highlightjs-solidity": "^1.0.6",
     "node-sass": "^4.7.2"
   },
   "devDependencies": {

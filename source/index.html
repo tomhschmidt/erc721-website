@@ -117,7 +117,7 @@
 
       <div class="container has-text-left">
         <pre>
-          <code>
+          <code class="lang-solidity">
               /*
               * @title ERC721 interface
               */
@@ -418,6 +418,7 @@
 
   <!-- Scripts -->
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/vendor.js"></script>
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-98720122-2"></script>
   <script>
@@ -425,6 +426,10 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'UA-98720122-2');
+  </script>
+  <script>
+    hljs.registerLanguage('solidity', window.hljsDefineSolidity);
+    hljs.initHighlightingOnLoad();
   </script>
 
 </body>
