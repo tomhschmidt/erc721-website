@@ -28,7 +28,11 @@ gulp.task('compress', function() {
 
 // minify & concatenate vendor scripts
 gulp.task('vendor', function() {
-  return gulp.src('source/_/js/vendor/*.js')
+  return gulp.src([
+    'source/_/js/vendor/*.js',
+    'node_modules/highlightjs/highlight.pack.js',
+    'node_modules/highlightjs-solidity/solidity.js',
+  ])
     .pipe(concat('vendor.js'))
     .pipe(uglify())
     .pipe(gulp.dest('source/assets/js/'));
@@ -36,7 +40,10 @@ gulp.task('vendor', function() {
 
 // compile sass and concatenate
 gulp.task('style', function() {
-  return gulp.src('source/_/sass/*.scss')
+  return gulp.src([
+    'source/_/sass/*.scss',
+    'node_modules/highlightjs/styles/default.css',
+  ])
     .pipe(sass({
       'sourcemap=none': true,
       outputStyle: 'expanded'
