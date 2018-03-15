@@ -66,3 +66,10 @@ gulp.task('watch', ['browser-sync'], function() {
 
 // tasks that run on 'gulp' command
 gulp.task('default', ['watch']);
+gulp.task('prod', function() {
+  gulp.src('source/index.html')
+  .pipe(gulp.dest('./'))
+
+  gulp.src('source/assets/**/*')
+  .pipe(gulp.dest('./assets'))
+})
