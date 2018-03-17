@@ -1,82 +1,123 @@
-// include gulp
-var gulp = require('gulp'),
-    autoprefixer = require('gulp-autoprefixer'),
-    concat = require('gulp-concat'),
-    imagemin = require('gulp-imagemin'),
-    newer = require('gulp-newer'),
-    notify = require('gulp-notify'),
-    sass = require('gulp-sass'),
-    uglify = require('gulp-uglify'),
-    browserSync = require('browser-sync').create();
+const gulp = require('gulp'),
+  autoprefixer = require('gulp-autoprefixer'),
+  concat = require('gulp-concat'),
+  imagemin = require('gulp-imagemin'),
+  newer = require('gulp-newer'),
+  notify = require('gulp-notify'),
+  sass = require('gulp-sass'),
+  uglify = require('gulp-uglify'),
+  browserSync = require('browser-sync').create(),
+  cleanCSS = require('gulp-clean-css'),
+  del = require('del'),
+  filter = require('gulp-filter');
 
-// image processing
+const srcPath = 'source/'; // Path to our source files
+const distPath = 'docs/'; // The output files, hosted by GitHub
+
+// Remove the derived folder
+gulp.task('clean', function() {
+  return del([distPath]);
+})
+
+// Minify images
 gulp.task('imagemin', function() {
-   var img_src = 'source/_/img/**/*', img_dest = 'source/assets/img';
-
-   gulp.src(img_src)
-   .pipe(imagemin())
-   .pipe(gulp.dest(img_dest));
+  const src = srcPath + '_/img/**/*';
+  const dest = distPath + 'assets/img';
+  return gulp.src(src)
+    .pipe(imagemin())
+    .pipe(gulp.dest(dest));
 });
 
-// minify scripts
-gulp.task('compress', function() {
-  return gulp.src('source/_/js/*.js')
-    .pipe(concat('app.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('source/assets/js/'));
-});
-
-// minify & concatenate vendor scripts
-gulp.task('vendor', function() {
-  return gulp.src([
-    'source/_/js/vendor/*.js',
-    'node_modules/highlightjs/highlight.pack.js',
-    'node_modules/highlightjs-solidity/solidity.js',
-  ])
-    .pipe(concat('vendor.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('source/assets/js/'));
-});
-
-// compile sass and concatenate
-gulp.task('style', function() {
-  return gulp.src([
-    'source/_/sass/*.scss',
-    'node_modules/highlightjs/styles/default.css',
-  ])
+// Compile application sass
+gulp.task('minifyapp', function() {
+  const src = srcPath + '_/sass/**/*.scss';
+  const dest = distPath + 'assets/css/';
+  return gulp.src(src)
     .pipe(sass({
       'sourcemap=none': true,
       outputStyle: 'expanded'
     }))
-    .pipe(concat('style.css'))
-    .pipe(gulp.dest('source/assets/css/'))
-    .pipe(notify({ message: 'Style task complete!' }));
+    .pipe(concat('app.css'))
+    .pipe(cleanCSS())
+    .pipe(gulp.dest(dest));
 });
 
-// Browsersync
-gulp.task('browser-sync', function() {
-  browserSync.init(["source/**", "source/assets/css/*.css", "source/assets/js/*.js"], {
-    server: {
-      baseDir: "source"
-    }
+// Copy vendor css
+gulp.task('minifyvendor', function() {
+  const src = 'node_modules/bulma/css/bulma.css';
+  const dest = distPath + 'assets/css/';
+  return gulp.src(src)
+    .pipe(concat('vendor.css'))
+    .pipe(cleanCSS())
+    .pipe(gulp.dest(dest));
+});
+
+// Minify application javascript
+gulp.task('uglifyapp', function() {
+  const src = srcPath + '_/js/**/*.js';
+  const dest = distPath + 'assets/js/';
+  return gulp.src(src)
+    .pipe(concat('app.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(dest));
+});
+
+// Minify vendor javascript
+gulp.task('uglifyvendor', function() {
+  const src = [
+    'node_modules/highlightjs/highlight.pack.js',
+    'node_modules/highlightjs-solidity/solidity.js',
+  ]
+  const dest = distPath + 'assets/js/';
+  return gulp.src(src)
+    .pipe(concat('vendor.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(dest));
+});
+
+// Copy everything except the special folder _
+gulp.task('copyother', function() {
+  const f = ['**', '!**/*/', '!**/_/**', '!**/_'];
+  const f2 = function(vinyl) {
+    return !vinyl.isDirectory()
+  }
+  return gulp.src(srcPath + '**/*')
+    .pipe(filter(f))
+    .pipe(filter(f2))
+//    .pipe(gulp.symlink(distPath));
+    .pipe(gulp.dest(distPath));
+});
+
+// Complete regenerate the dist folder
+gulp.task('dist',
+  gulp.series('clean',
+    gulp.parallel(
+      'imagemin',
+      'minifyapp',
+      'minifyvendor',
+      'uglifyapp',
+      'uglifyvendor',
+      'copyother'
+    )
+  )
+);
+
+// Watch for changes
+gulp.task('watch', function() {
+  gulp.watch(srcPath + '_/img/**/*', gulp.task('imagemin'));
+  gulp.watch(srcPath + '_/sass/**/*.scss', gulp.task('minifyapp'));
+  gulp.watch(srcPath + 'node_modules/bulma/css/bulma.css', gulp.task('minifyvendor'));
+  gulp.watch(srcPath + '_/js/**/*.js', gulp.task('uglifyapp'));
+  gulp.watch('node_modules/**/*js', gulp.task('uglifyvendor'));
+  gulp.watch(srcPath, gulp.task('copyother'));
+});
+
+// BrowserSync
+gulp.task('serve', gulp.series('watch', function() {
+  browserSync.init({
+      server: distPath
   });
-});
+}));
 
-// watch these directories/files for changes
-gulp.task('watch', ['browser-sync'], function() {
-  // watch changes to all image, js & sass files within `_/` directory
-  gulp.watch('source/_/img/*', ['imagemin']),
-  gulp.watch('source/_/js/**/*.js', ['compress']),
-  gulp.watch('source/_/js/vendor/**/*.js', ['vendor']),
-  gulp.watch('source/_/sass/**/*.scss', ['style'])
-});
-
-// tasks that run on 'gulp' command
-gulp.task('default', ['watch']);
-gulp.task('prod', function() {
-  gulp.src('source/index.html')
-  .pipe(gulp.dest('./'))
-
-  gulp.src('source/assets/**/*')
-  .pipe(gulp.dest('./assets'))
-})
+// Tasks that run on 'gulp' command
+gulp.task('default', gulp.task('serve'));
