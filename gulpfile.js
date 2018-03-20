@@ -84,7 +84,6 @@ gulp.task('copyother', function() {
   return gulp.src(srcPath + '**/*')
     .pipe(filter(f))
     .pipe(filter(f2))
-//    .pipe(gulp.symlink(distPath));
     .pipe(gulp.dest(distPath));
 });
 
@@ -113,7 +112,7 @@ gulp.task('watch', function() {
 });
 
 // BrowserSync
-gulp.task('serve', gulp.series('watch', function() {
+gulp.task('serve', gulp.parallel('watch', function() {
   browserSync.init({
       server: distPath
   });
