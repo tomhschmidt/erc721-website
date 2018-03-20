@@ -4,27 +4,29 @@
   "description": "erc721.org",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp dist"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bulma": "^0.6.2",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "highlightjs": "^9.10.0",
     "highlightjs-solidity": "^1.0.6",
-    "node-sass": "^4.7.2"
+    "node-sass": "^4.8.2"
   },
   "devDependencies": {
     "browser-sync": "*",
-    "gulp": "^3.9.1",
+    "del": "^3.0.0",
     "gulp-autoprefixer": "^2.3.1",
+    "gulp-clean-css": "^3.9.3",
     "gulp-concat": "^2.6.0",
+    "gulp-filter": "^5.1.0",
     "gulp-imagemin": "^4.1.0",
     "gulp-livereload": "*",
     "gulp-newer": "^1.4.0",
     "gulp-notify": "*",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^3.2.0",
     "gulp-uglify": "^3.0.0"
   }
 }
