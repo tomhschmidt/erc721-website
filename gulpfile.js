@@ -12,7 +12,7 @@ const gulp = require('gulp'),
   filter = require('gulp-filter');
 
 const srcPath = 'source/'; // Path to our source files
-const distPath = 'docs/'; // The output files, hosted by GitHub
+const distPath = './docs/'; // The output files, hosted by GitHub
 
 // Remove the derived folder
 gulp.task('clean', function() {
