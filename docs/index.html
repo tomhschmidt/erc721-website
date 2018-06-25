@@ -162,7 +162,7 @@
             ///  `_tokenId` is not a valid NFT. When transfer is complete, this function
             ///  checks if `_to` is a smart contract (code size > 0). If so, it calls
             ///  `onERC721Received` on `_to` and throws if the return value is not
-            ///  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`.
+            ///  `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`.
             /// @param _from The current owner of the NFT
             /// @param _to The new owner
             /// @param _tokenId The NFT to transfer
@@ -227,6 +227,21 @@
             ///  `interfaceID` is not 0xffffffff, `false` otherwise
             function supportsInterface(bytes4 interfaceID) external view returns (bool);
         }
+
+        interface ERC721TokenReceiver {
+            /// @notice Handle the receipt of an NFT
+            /// @dev The ERC721 smart contract calls this function on the
+            /// recipient after a `transfer`. This function MAY throw to revert and reject the transfer. Return
+            /// of other than the magic value MUST result in the transaction being reverted.
+            /// @notice The contract address is always the message sender. 
+            /// @param _operator The address which called `safeTransferFrom` function
+            /// @param _from The address which previously owned the token
+            /// @param _tokenId The NFT identifier which is being transferred
+            /// @param _data Additional data with no specified format
+            /// @return `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`
+            /// unless throwing
+            function onERC721Received(address _operator, address _from, uint256 _tokenId, bytes _data) external returns(bytes4);
+         }
           </code>
         </pre>
       </div>
@@ -237,10 +252,10 @@
           <a href="https://github.com/dete">@dete</a> and first came to life in the CryptoKitties project by
           <a href="https://wwww.axiomzen.com">Axiom Zen</a>
           <br/>
-          <br/> ERC-721 has since moved out of beta and into a community formalized v1 spec, supported and endorsed by a
-          large number of projects from across the crypto ecosystem. This EIP wouldn't be possible without time and dedication
-          from a number of community members. Special thanks to <a href="https://github.com/fulldecent">@fulldecent</a> and others
-          who have put in tremendous amounts of work to push this forward.
+          <br/> ERC-721 has since moved out of beta and into a community formalized v1 spec, supported and endorsed by a large
+          number of projects from across the crypto ecosystem. This EIP wouldn't be possible without time and dedication
+          from a number of community members. Special thanks to
+          <a href="https://github.com/fulldecent">@fulldecent</a> and others who have put in tremendous amounts of work to push this forward.
         </p>
       </div>
       <!-- /.section-header-text -->
@@ -323,64 +338,64 @@
         </div>
         <div class="column">
           <a href="https://decentraland.org/">
-          <div class=" glitch supporter">
-            <img src="../../assets/img/decentraland.png"/>
-          </div>
-        </a>
+            <div class=" glitch supporter">
+              <img src="../../assets/img/decentraland.png" />
+            </div>
+          </a>
           <h4>Decentraland</h4>
         </div>
         <div class="column">
           <a href="https://github.com/cryppadotta/dotta-license">
-          <div class=" glitch supporter">
-            <img src="../../assets/img/dot-license.png"/>
-          </div>
-        </a>
+            <div class=" glitch supporter">
+              <img src="../../assets/img/dot-license.png" />
+            </div>
+          </a>
           <h4>Dotlicense</h4>
         </div>
         <div class="column">
           <a href="https://tenthousandsu.com/">
-          <div class=" glitch supporter">
-            <img src="../../assets/img/su-squares.png"/>
-          </div>
-        </a>
+            <div class=" glitch supporter">
+              <img src="../../assets/img/su-squares.png" />
+            </div>
+          </a>
           <h4>Su Squares</h4>
         </div>
         <div class="column">
           <a href="https://www.cipherbrowser.com/">
-          <div class=" glitch supporter">
-            <img src="../../assets/img/cipher.svg" width="145"/>
-          </div>
-        </a>
+            <div class=" glitch supporter">
+              <img src="../../assets/img/cipher.svg" width="145" />
+            </div>
+          </a>
           <h4>Cipher Browser</h4>
         </div>
         <div class="column">
           <a href="http://knownorigin.io/">
-          <div class=" glitch supporter">
-            <img src="../../assets/img/known-origin.png"/>
-          </div>
-        </a>
+            <div class=" glitch supporter">
+              <img src="../../assets/img/known-origin.png" />
+            </div>
+          </a>
           <h4>KnownOrigin Marketplace</h4>
         </div>
         <div class="column">
           <a href="https://auctionity.com/">
-          <div class=" glitch supporter">
-            <img src="../../assets/img/auctionity.png"/>
-          </div>
-        </a>
+            <div class=" glitch supporter">
+              <img src="../../assets/img/auctionity.png" />
+            </div>
+          </a>
           <h4>Auctionity</h4>
         </div>
         <div class="column">
           <a href="https://nonfungible.com/">
-          <div class=" glitch supporter">
-            <img src="../../assets/img/nonfungible.com.png"/>
-          </div>
-        </a>
+            <div class=" glitch supporter">
+              <img src="../../assets/img/nonfungible.com.png" />
+            </div>
+          </a>
           <h4>NonFungible.com</h4>
         </div>
         <div class="column">
           <a href="https://0xcert.org/">
             <div class=" glitch supporter">
-              <img src="../../assets/img/0xcert.org.png"/>
+              <img src="../../assets/img/0xcert.org.png" />
             </div>
           </a>
           <h4>0xcert Protocol</h4>
@@ -388,7 +403,7 @@
         <div class="column">
           <a href="https://smartz.io/">
             <div class=" glitch supporter">
-              <img src="../../assets/img/smartz.png"/>
+              <img src="../../assets/img/smartz.png" />
             </div>
           </a>
           <h4>Smartz</h4>
