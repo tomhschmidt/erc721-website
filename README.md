@@ -5,7 +5,6 @@ Initially built during ETH Denver by [@BrandonRelay](https://github.com/BrandonR
 - Please be sure to have [Node.js](https://nodejs.org/en/) installed before moving forward
 - Install Gulp globally: `$ npm install --global gulp-cli`
 - Run `gulp` to develop locally
-- ​
 
 ## Contributing
 - Fork this repository
