@@ -1,5 +1,5 @@
 # ERC-721 Website
-Initially built during ETH Denver by [@BrandonRelay](https://github.com/BrandonRelay) and [@tomhschmidt](https://github.com/tomhschmidt). Forked from  [gwei.io]() project using [Gulp.js](https://gulp.js) for automation and Bulma as its framework.
+Initially built during ETH Denver by [@BrandonRelay](https://github.com/BrandonRelay) and [@tomhschmidt](https://github.com/tomhschmidt). Forked from  [gwei.io](https://gwei.io) project using [Gulp.js](https://gulp.js) for automation and Bulma as its framework.
 
 ## Building the site
 - Please be sure to have [Node.js](https://nodejs.org/en/) installed before moving forward
